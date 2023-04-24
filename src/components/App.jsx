@@ -1,5 +1,10 @@
+import { Form } from "./Form/Form";
+import { Contacts } from "./Contacts/Contacts";
+import { Filter } from "./Filter/Filter";
+import { Title } from "./App.styled";
+
 export const App = () => {
-  return (
+return(
     <div
       style={{
         height: '100vh',
@@ -10,7 +15,12 @@ export const App = () => {
         color: '#010101'
       }}
     >
-      React homework template
+      <Title>Phonebook</Title>  
+        <Form/>
+
+      <Title>Contacts</Title>
+        <Filter/>
+        <Contacts/>
     </div>
   );
 };
