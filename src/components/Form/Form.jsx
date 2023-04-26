@@ -3,7 +3,7 @@ import { nanoid } from "nanoid";
 import { useDispatch, useSelector } from "react-redux";
 
 import { ContactsForm, Name, AddContact } from "./Form.styled";
-import { addContact } from "redux/contactsSlice";
+import { addContact } from "redux/operations";
 
 export const Form = () => { 
     const dispatch = useDispatch();
@@ -29,6 +29,7 @@ export const Form = () => {
             name: e.currentTarget.elements.name.value,
             phone: e.currentTarget.elements.number.value
         }
+
         const isNameInContacts = contacts.filter(item => item.name === e.currentTarget.elements.name.value).length;
 
         (isNameInContacts) ?
