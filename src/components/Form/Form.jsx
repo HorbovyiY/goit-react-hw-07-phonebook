@@ -7,7 +7,7 @@ import { addContact } from "redux/contactsSlice";
 
 export const Form = () => { 
     const dispatch = useDispatch();
-    const contacts = useSelector(state => state.contacts.contacts)
+    const contacts = useSelector(state => state.contacts.contacts.items)
     
     const [name, setName] = useState('');
     const [number, setNumber] = useState('');
@@ -27,7 +27,7 @@ export const Form = () => {
         const newContact = {
             id: nanoid(),
             name: e.currentTarget.elements.name.value,
-            number: e.currentTarget.elements.number.value
+            phone: e.currentTarget.elements.number.value
         }
         const isNameInContacts = contacts.filter(item => item.name === e.currentTarget.elements.name.value).length;
 
